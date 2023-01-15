@@ -5,6 +5,7 @@ body {
   padding: 0;
   margin: 0;
   color: #363636;
+  font-family: Montserrat;
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -36,7 +37,6 @@ a {
     font-size: 16px;
     line-height: 20px;
     padding-bottom: 3px;
-    font-family: Montserrat;
     border-bottom: 1px solid #eaeaea;
   }
 
@@ -48,6 +48,12 @@ a {
     grid-row-gap: 45px;
 
     padding-top: 45px;
+  }
+
+  &__error {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    text-align: center;
   }
 }
 

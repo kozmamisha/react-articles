@@ -1,19 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import './ItemBlock.scss';
+import './ArticleBlock.scss';
 
-type ItemBlockProps = {
-  id: number;
-  date: 'string';
-  title: 'string';
-  content: 'string';
+type ArticleBlockProps = {
+  id: string;
+  date: string;
+  title: string;
+  description: string;
+  content: string;
 };
 
-const ItemBlock: React.FC<ItemBlockProps> = ({ id, date, title, content }) => {
+const ArticleBlock: React.FC<ArticleBlockProps> = ({ id, date, title, description }) => {
   return (
     <div className="item-block">
-      <img className="item-block__image" src={`/assets/img/img${id + 1}.png`} alt="Image" />
+      <img className="item-block__image" src={`/assets/img/img${Number(id) + 1}.png`} alt="Image" />
       <div className="item-block__info">
         <div className="item-block__info-date">
           <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -45,9 +46,9 @@ const ItemBlock: React.FC<ItemBlockProps> = ({ id, date, title, content }) => {
           <span>{date}</span>
         </div>
         <h2>{title}</h2>
-        <p>{content}</p>
+        <p>{description}</p>
         <div className="item-block__info-button">
-          <Link key={id} to={`/page/${id + 1}`}>
+          <Link key={id} to={`/page/${id}`}>
             <span>Read more</span>
             <svg
               width="12"
@@ -69,4 +70,4 @@ const ItemBlock: React.FC<ItemBlockProps> = ({ id, date, title, content }) => {
   );
 };
 
-export default ItemBlock;
+export default ArticleBlock;
